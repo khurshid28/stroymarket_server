@@ -1,0 +1,21 @@
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702835013899 ___ InternalServerError ___ connect ECONNREFUSED ::1:80
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702836462824 ___ InternalServerError ___ Cannot find module './utils/sms_generate'
+Require stack:
+- C:\Users\JONIBEK\Desktop\stroymarket_server\src\controllers\phone.js
+- C:\Users\JONIBEK\Desktop\stroymarket_server\src\routes\phone.js
+- C:\Users\JONIBEK\Desktop\stroymarket_server\src\routes\_index.js
+- C:\Users\JONIBEK\Desktop\stroymarket_server\app.js
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702836505185 ___ InternalServerError ___ Cannot find module './utils/sms_generate'
+Require stack:
+- C:\Users\JONIBEK\Desktop\stroymarket_server\src\controllers\phone.js
+- C:\Users\JONIBEK\Desktop\stroymarket_server\src\routes\phone.js
+- C:\Users\JONIBEK\Desktop\stroymarket_server\src\routes\_index.js
+- C:\Users\JONIBEK\Desktop\stroymarket_server\app.js
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702836545142 ___ InternalServerError ___ phoneModel.insertOne is not a function
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702836609656 ___ InternalServerError ___ phoneModel.insertOne is not a function
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702836628313 ___ InternalServerError ___ phoneModel.insertOne is not a function
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702836691258 ___ InternalServerError ___ phoneModel.insert is not a function
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702836778992 ___ InternalServerError ___ phoneModel.save is not a function
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702837365359 ___ InternalServerError ___ Date.now is not a constructor
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702837540050 ___ InternalServerError ___ Cannot read properties of null (reading 'date')
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702837707712 ___ InternalServerError ___ Cannot read properties of null (reading 'date')
