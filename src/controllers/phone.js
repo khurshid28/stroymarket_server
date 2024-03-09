@@ -88,7 +88,7 @@ class PhoneController {
           token
         });
       } else {
-        return next(new BadRequestError(400, "Invalid sms code"));
+        return next(new BadRequestError(401, "Invalid sms code"));
       }
     } catch (error) {
       console.log(error);
