@@ -1,5 +1,5 @@
 const axios = require("axios");
-let { InternalServerError, BadRequestError } = require("../utils/errors");
+let { InternalServerError,BadRequestError } = require("../utils/errors");
 let phoneModel = require("../models/phone");
 const userModel = require("../models/1.user");
 const jwt = require("../utils/jwt.js");
@@ -50,7 +50,8 @@ class PhoneController {
           
         });
       } else {
-        return new BadRequestError(400, "Not sent sms");
+    
+       return next(new BadRequestError(400, "Not sent sms"));
       }
     } catch (error) {
       console.log(error);
@@ -60,6 +61,7 @@ class PhoneController {
 
   async verify(req, res, next) {
     try {
+      return next(new InternalServerError(500, error.message));
       let { phone, code } = req.body;
       let phoneOne = await phoneModel.findOne({
         num: phone,
@@ -88,7 +90,7 @@ class PhoneController {
           token
         });
       } else {
-        return next(new BadRequestError(401, "Invalid sms code"));
+        return next(new BadRequestError(400, "Invalid sms code"));
       }
     } catch (error) {
       console.log(error);
