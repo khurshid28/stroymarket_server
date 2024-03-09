@@ -3,7 +3,9 @@
 const dotenv = require("dotenv");
 const path = require("path");
 
-dotenv.config({ path: path.join(process.cwd(), ".env") });
+
+// dotenv.config({ path: path.join(process.cwd(), ".env") });
+dotenv.config();
 require("./src/config/db.js");
 
 var express = require("express");
@@ -27,8 +29,6 @@ const app = express();
 
 // PORT
 const PORT = process.env.PORT || 5090;
-
-
 
 
 app.use(express.json({limit: '20mb'}),);
