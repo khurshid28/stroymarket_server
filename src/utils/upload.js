@@ -11,16 +11,19 @@ const fileFilter = (req, file, cb) => {
 	}
 };
 
-const storage = multer.diskStorage({
+let storage =(path)=> multer.diskStorage({
 	destination: function (req, file, cb) {
-		cb(null, "public/images/");
+		cb(null, path);
 	},
 	filename: function (req, file, cb) {
-		cb(null, Date.now() + file.originalname);
+		let filename =  Date.now() + file.originalname;
+		req.body.filename= filename
+		cb(null, filename);
 	},
 });
 
 // Create Multer object
-const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 }, fileFilter });
+
+let upload = (path)=> multer({ storage: storage(path), limits: { fileSize: 30 * 1024 * 1024 }, fileFilter });
 
 module.exports = upload;

@@ -25,22 +25,18 @@ const authMiddleware = require("./src/middlewares/authMiddleware");
 const app = express();
 
 
-
-
 // PORT
 const PORT = process.env.PORT || 5090;
 
 
 
-app.use(express.json({limit: '10mb'}),);
-app.use(express.urlencoded({extended:false,limit: '10mb',parameterLimit : 10}));
+
+app.use(express.json({limit: '20mb'}),);
+app.use(express.urlencoded({extended:false,limit: '20mb',parameterLimit : 10}));
+
+app.use(morgan("dev"), cors(), rateLimit(),authMiddleware );
 
 
-app.use(morgan("dev"), cors(), rateLimit(), authMiddleware );
-
-
-// all routes
-app.use("/api/v1",router);
 
 app.use(helmet());
 
@@ -48,13 +44,16 @@ app.use(helmet());
 app.use(errorHandler);
 app.use(logger);
 
-// static
-app.use( "static", express.static(path.join(__dirname, "public")));
 
+// all routes
+app.use("/api/v1",router);
 
 // testing server
 app.get("/", (req, res) => res.send("STROY MARKET API"));
 
+
+// static
+app.use("/static", express.static(path.join(__dirname, "public")));
 
 // starting server
 app.listen(PORT, async () => {
@@ -63,4 +62,10 @@ app.listen(PORT, async () => {
 
 
 
+
+//schedule
+require("./src/utils/schedule")
+
+//bot
+require("./src/bot/support")
 

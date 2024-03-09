@@ -19,3 +19,17 @@ Require stack:
 /api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702837365359 ___ InternalServerError ___ Date.now is not a constructor
 /api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702837540050 ___ InternalServerError ___ Cannot read properties of null (reading 'date')
 /api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1702837707712 ___ InternalServerError ___ Cannot read properties of null (reading 'date')
+/api/v1/phone?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1706693266540 ___ InternalServerError ___ Request failed with status code 400
+/api/v1/login?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1708161692102 ___ BadRequestError ___ Invalid login credentials
+/api/v1/login?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1708161707357 ___ BadRequestError ___ Invalid login credentials
+/api/v1/login?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1708161739818 ___ BadRequestError ___ Invalid login credentials
+/api/v1/shop?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1708163811043 ___ InternalServerError ___ TypeError: User.findon is not a function
+/api/v1/admin/65d1ce068249af737c3ad7343?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1708250299118 ___ InternalServerError ___ Cast to ObjectId failed for value "65d1ce068249af737c3ad7343" (type string) at path "_id" for model "admin"
+/api/v1/admin/65d1ce068249af737c3ad7433?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1708250325080 ___ InternalServerError ___ Cast to ObjectId failed for value "65d1ce068249af737c3ad7433" (type string) at path "_id" for model "admin"
+/api/v1/admin/65d1ce068249af737c3ad7433?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1708250326133 ___ InternalServerError ___ Cast to ObjectId failed for value "65d1ce068249af737c3ad7433" (type string) at path "_id" for model "admin"
+/api/v1/admin/65d1ce068249af737c3ad7433?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1708250326953 ___ InternalServerError ___ Cast to ObjectId failed for value "65d1ce068249af737c3ad7433" (type string) at path "_id" for model "admin"
+/api/v1/service/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1708414199924 ___ MulterError ___ Unexpected field
+/api/v1/service/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1708414220423 ___ MulterError ___ Unexpected field
+/api/v1/service/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1708414260580 ___ MulterError ___ Unexpected field
+/api/v1/service/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1708414261797 ___ MulterError ___ Unexpected field
+/api/v1/service/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1708414303301 ___ MulterError ___ Unexpected field
