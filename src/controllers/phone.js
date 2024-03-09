@@ -61,7 +61,7 @@ class PhoneController {
 
   async verify(req, res, next) {
     try {
-      return next(new InternalServerError(500, error.message));
+      return next(new InternalServerError(500, "error.message"));
       let { phone, code } = req.body;
       let phoneOne = await phoneModel.findOne({
         num: phone,
