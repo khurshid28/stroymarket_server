@@ -37,6 +37,9 @@ app.use(express.json({limit: '20mb'}),);
 // testing server
 app.get("/", (req, res) => res.send("STROY MARKET API"));
 
+// all routes
+app.use("/api/v1",router);
+
 app.use(morgan("dev"), cors(), rateLimit(),authMiddleware );
 
 
@@ -48,8 +51,6 @@ app.use(errorHandler);
 app.use(logger);
 
 
-// all routes
-app.use("/api/v1",router);
 
 
 
