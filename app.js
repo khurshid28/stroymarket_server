@@ -35,7 +35,7 @@ app.use(express.json({limit: '20mb'}),);
 
 
 // testing server
-app.get("/", (req, res) => res.send("STROY MARKET API"));
+app.get("/api/v1", (req, res) => res.send("STROY MARKET API"));
 
 // all routes
 app.use("/api/v1",router);
