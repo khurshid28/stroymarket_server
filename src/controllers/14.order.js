@@ -10,6 +10,7 @@ let {
   BadRequestError,
   NotFoundError,
 } = require("../utils/errors");
+const shopModel = require("../models/5.shop");
 
 class OrderController {
   async create(req, res, next) {
@@ -25,6 +26,22 @@ class OrderController {
         products,
         location,
       });
+      let shop = await shopModel.findOne({ _id: shop_id });
+      let productNames = await Promise.all(
+        products.map(async (item) => {
+          let prod = await productModel.findById(item.product_id);
+
+          let index = shop.products.findIndex((x) => x._id == item.product_id);
+          let kindex = shop.products[index].items.findIndex(
+            (x) => x._id == item.item_id
+          );
+          let ItemVal = shop.products[index].items[kindex];
+          return `${prod.name} ${item.count}ta ${ItemVal.name} (${toMoney(
+            Math.floor(ItemVal.price)
+          )} * ${item.count})`;
+        })
+      );
+
       let admin = await adminModel.findOne({
         shop_id,
       });
@@ -50,14 +67,7 @@ class OrderController {
           "\n\n" +
           "TOVARLAR:" +
           "\n" +
-          products
-            .map(
-              (item) =>
-                `${item.name} ${item.count}ta ${item.color.name} (${toMoney(
-                  Math.floor(item.price)
-                )} * ${item.count})`
-            )
-            .join("\n") +
+          productNames.join("\n") +
           "</b>";
 
         bot
@@ -82,6 +92,7 @@ class OrderController {
         products.forEach(async (p) => {
           await productModel.findById(p.product_id).then(async (product) => {
             console.log(">>>\n" + product);
+            // shop.products[index]
             await productModel.updateOne(
               {
                 _id: product._id,
@@ -92,8 +103,6 @@ class OrderController {
             );
           });
         });
-
-        
       }
       return res.status(201).json({
         message: "success",
@@ -108,6 +117,12 @@ class OrderController {
   async finish(req, res, next) {
     try {
       let { id } = req.params;
+      let oldOrder = await orderModel.findOne({
+        _id:id,
+      });
+      if (oldOrder.status != "started") {
+        return next(new BadRequestError(400,"⚠️ This order is already finished"))
+      }
 
       let order = await orderModel.findByIdAndUpdate(
         {
@@ -117,17 +132,58 @@ class OrderController {
           status: "finished",
         }
       );
+      let shop = await shopModel.findOne({ _id: order.shop_id });
+      order.products.map(async(item) => {
+        console.log(item);
+        let index = shop.products.findIndex((x) => x._id == item.product_id);
+        console.log(index);
+        let kindex = shop.products[index].items.findIndex((x) => x._id == item.item_id);
+        console.log(kindex);
+        shop.products[index].items[kindex].count -= item.count
+        await shopModel.updateOne({ _id: order.shop_id},{
+          products: shop.products
+        })
+
+      });
+      let newOrder = await orderModel.findOne({
+        _id: id,
+      });
 
       return res.status(201).json({
         message: "success",
-        data: order,
+        data: newOrder,
       });
     } catch (error) {
       console.log(error);
       return next(new InternalServerError(500, error.message));
     }
   }
+  async cancel(req, res, next) {
+    try {
+      let { title, subtitle } = req.body;
+      let { id } = req.params;
 
+      let order = await orderModel.findByIdAndUpdate(
+        {
+          _id: id,
+        },
+        {
+          status: "canceled",
+        }
+      );
+      let newOrder = await orderModel.findOne({
+        _id: id,
+      });
+
+      return res.status(200).json({
+        message: "success",
+        data: newOrder,
+      });
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
   async confirm(req, res, next) {
     try {
       let { title, subtitle } = req.body;
@@ -141,10 +197,13 @@ class OrderController {
           status: "confirmed",
         }
       );
+      let newOrder = await orderModel.findOne({
+        _id: id,
+      });
 
-      return res.status(201).json({
+      return res.status(200).json({
         message: "success",
-        data: order,
+        data: newOrder,
       });
     } catch (error) {
       console.log(error);
@@ -170,7 +229,21 @@ class OrderController {
 
   async all(req, res, next) {
     try {
-      let all = await orderModel.find({});
+
+      let all =[]
+      console.log("kkk ===");
+      console.log(req.user);
+      if(req.user.role == "Super"){
+       all  = await orderModel.find({});
+      }
+      else if (req.user.role == "Admin") {
+        let admin = adminModel.findOne({_id:req.user._id})
+        all = await orderModel.find({shop_id:admin.shop_id});
+      }
+      else if (req.user.role == "User") {
+        all = await orderModel.find({user_id: req.user._id});
+      }
+
       return res.status(200).json({
         message: "success",
         data: all,

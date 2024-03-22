@@ -30,12 +30,16 @@ const shopschema = mongoose.Schema(
     products: [
       {
         _id: String,
-        price: Number,
-        colors:[String],
-        count: {
-          type: Number,
-          default: 0,
-        },
+        items: [
+          {
+            name: String,
+            price: Number,
+            count: {
+              type: Number,
+              default: 0,
+            },
+          },
+        ],
       },
     ],
   },

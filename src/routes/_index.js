@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const swaggerUi = require("swagger-ui-express");
 const checkToken =require("../middlewares/check-token")
-
 const router = Router();
 const shopRouter = require("./5.shop");
 const phoneRouter = require("./phone");
@@ -25,23 +24,23 @@ const orderRouter = require("./14.order");
 
 router.use("/phone",phoneRouter);
 router.use("/login",loginRouter);
-router.use("/admin",adminRouter);
+router.use("/admin",checkToken,adminRouter);
 router.use("/super",superRouter);
-router.use("/shop",shopRouter);
-router.use("/service",serviceRouter);
-router.use("/worker",workerRouter);
+router.use("/shop",checkToken,shopRouter);
+router.use("/service",checkToken,serviceRouter);
+router.use("/worker",checkToken,workerRouter);
 
-router.use("/category",categoryRouter);
-router.use("/product",productRouter);
+router.use("/category",checkToken,categoryRouter);
+router.use("/product",checkToken,productRouter);
 
 
-router.use("/news",newsRouter);
-router.use("/ads",adsRouter);
+router.use("/news",checkToken,newsRouter);
+router.use("/ads",checkToken,adsRouter);
 
-router.use("/payment",paymentRouter);
-router.use("/region",regionRouter);
+router.use("/payment",checkToken,paymentRouter);
+router.use("/region",checkToken,regionRouter);
 
-router.use("/order",orderRouter);
+router.use("/order",checkToken,orderRouter);
 
 const swaggerDoc = require("../docs/swagger.js");
 router.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc));

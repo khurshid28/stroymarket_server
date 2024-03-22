@@ -4,7 +4,11 @@ const userschema = mongoose.Schema({
     role: {
         type: String,
         default: "User"
-    }
+    },
+    work_status: {
+        type: String,
+        default: "working", // working,blocked
+      },
    
 },{strict:false})
 

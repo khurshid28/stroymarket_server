@@ -7,7 +7,7 @@ const Orderschema = mongoose.Schema(
       type: String,
       default: "started",
     }, 
-    //  "started","finished","confirmed"
+    //  "started","finished","canceled","confirmed"
     
     receive_type: String,   //  market,delivery
     delivery_type: String,  // yandex,fixed

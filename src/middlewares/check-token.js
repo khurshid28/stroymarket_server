@@ -25,13 +25,25 @@ module.exports = async (req, res, next) => {
 
     let user;
     if (role == "User") {
-      user = await User.findById(id);
+      console.log(await User.findOne({
+       
+      }));
+      user = await User.findOne({
+        _id:id,
+        work_status:"working"
+      });
       console.log(">>>>>>>>>");
       console.log(user);
     } else if (role == "Admin") {
-      user = await Admin.findById(id);
+      user = await Admin.findOne({
+        _id:id,
+        work_status:"working"
+      });
     } else if (role == "Super") {
-      user = await Super.findById(id);
+      user = await Super.findOne({
+        _id:id,
+        work_status:"working"
+      });
     }
    console.log(user);
    console.log({ id, agent, role });

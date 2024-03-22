@@ -4,6 +4,7 @@ const Productschema = mongoose.Schema(
     name: String,
     image: String,
     category_id: String,
+    type: String, // null,color,weight,length,size
     count : {
       type:Number,
       default :0

@@ -4,6 +4,8 @@ const { Router } = require("express");
 
 const router = Router();
 
+
+
 let adminController = require("../controllers/2.admin")
 
 router.post("/create",adminController.create);

@@ -5,20 +5,21 @@ let { InternalServerError, BadRequestError } = require("../utils/errors");
 class ProductController {
   async create(req, res, next) {
     try {
-      let { name, category_id,filename,desc } = req.body;
+      let { name, category_id,filename,desc,type } = req.body;
       let login = cryptoRandomString({ length: 10 });
       let password = cryptoRandomString({ length: 15 });
-      let superOne = await productModel.create({
+      let product = await productModel.create({
         category_id,
         name,
         image: filename ? "/static/product/" + filename : null,
         desc,
+        type
         
       });
 
       return res.status(200).json({
         message: "success",
-        data: superOne,
+        data: product,
       });
     } catch (error) {
       console.log(error);
@@ -66,7 +67,6 @@ class ProductController {
         return res.status(200).json({
             message: "success",
             data:product
-           
           });
       }
       return next(new BadRequestError(400, "Not found"));
