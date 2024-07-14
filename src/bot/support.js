@@ -13,6 +13,8 @@ let userModel = require("../models/1.user");
 
 const axios = require("axios");
 console.log(process.env.SUPPORT_BOT_TOKEN)
+console.log(process.env.MONGODB_URL)
+console.log(process.env.SMS_LOGIN_URL)
 
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
