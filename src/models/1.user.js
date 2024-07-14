@@ -13,6 +13,6 @@ const userschema = mongoose.Schema({
 },{strict:false})
 
 
-const user = mongoose.model("stroy-user", userschema);
+const user = mongoose.model("stroy_user", userschema);
 
 module.exports = user;
