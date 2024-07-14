@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 
 
-dotenv.config();
+dotenv.config({ path: path.join(process.cwd(), ".env") });
 require("./src/config/db.js");
 
 var express = require("express");
@@ -38,7 +38,7 @@ app.use(morgan("dev"), cors(), rateLimit(),authMiddleware );
 app.get("/", (req, res) => res.send("STROY MARKET API"));
 
 // all routes
-app.use("/",router);
+app.use("/v1",router);
 
 
 
