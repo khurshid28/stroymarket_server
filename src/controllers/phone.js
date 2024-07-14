@@ -36,7 +36,7 @@ class PhoneController {
       let resSendSms = await axios.post(
         process.env.SMS_SEND_URL,
         {
-          message: `Stroymarket: Your confirmation code for registration is: ${code}`,
+          message: `Diametr: Your confirmation code for registration is: ${code}`,
           from: "4546",
           mobile_phone: phone,
           callback_url: process.env.SMS_CALLBACK_URL,

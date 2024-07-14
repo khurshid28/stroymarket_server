@@ -188,7 +188,7 @@ class OrderController {
       let resSendSms = await axios.post(
         process.env.SMS_SEND_URL,
         {
-          message: `Stroymarket: Sizning buyurtmangiz qabul qilindi !!! Buyurtma raqami : ${order.order_id}`,
+          message: `Diametr: Sizning buyurtmangiz qabul qilindi !!! Buyurtma raqami : ${order.order_id}`,
           from: "4546",
           mobile_phone: user.phone,
           callback_url: process.env.SMS_CALLBACK_URL,

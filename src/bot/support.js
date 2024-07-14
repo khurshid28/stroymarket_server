@@ -19,7 +19,7 @@ console.log(process.env.SMS_LOGIN_URL)
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
   if (msg.text == "/start") {
-    bot.sendMessage(chatId, "✋ Welcome to Stroymarket support bot");
+    bot.sendMessage(chatId, "✋ Welcome to Diametr support bot");
   } else if (msg.text == "/id") {
     bot.sendMessage(chatId, msg.chat.id);
   } else if (chatId == admin || chatId == 2053690211) {
@@ -491,7 +491,7 @@ bot.on("callback_query", async (msg) => {
       .post(
         process.env.SMS_SEND_URL,
         {
-          message: `Stroymarket: Sizning buyurtmangiz qabul qilindi !!! Buyurtma raqami : ${order.order_id}`,
+          message: `Diametr: Sizning buyurtmangiz qabul qilindi !!! Buyurtma raqami : ${order.order_id}`,
           from: "4546",
           mobile_phone: user.phone,
           callback_url: process.env.SMS_CALLBACK_URL,

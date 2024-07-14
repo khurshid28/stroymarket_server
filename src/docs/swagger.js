@@ -5,13 +5,13 @@ const options = {
 	definition: {
 		openapi: "3.0.0",
 		info: {
-			title: "Premium Pay API Docs",
+			title: "Diametr API Docs",
 			version: "1.0.0",
-			description: "Documentation for Stroymarket",
+			description: "Documentation for Diametr",
 		},
 		servers: [
 			{
-				url: `http://localhost:8090/api`,
+				url: `http://localhost:5090/api/v1`,
 			},
 		],
 	},
