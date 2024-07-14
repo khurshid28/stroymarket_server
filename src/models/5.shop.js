@@ -1,7 +1,15 @@
 const mongoose = require("mongoose");
+
 const oneMonthFromNow = require("../utils/oneMonthfromNow");
 const shopschema = mongoose.Schema(
   {
+    
+    types : [
+      {
+        name: String,
+        value : String,
+      },
+    ],
     name: String,
     work_status: {
       type: String,
@@ -13,9 +21,12 @@ const shopschema = mongoose.Schema(
       lat: Number,
       lon: Number,
     },
+
     // delivery_type: String,
     // null,yandex,fixed
     delivery_amount: Number,
+    
+    
 
     image: String,
     expired: {
@@ -34,6 +45,10 @@ const shopschema = mongoose.Schema(
           {
             name: String,
             price: Number,
+            isDeleted : {
+              type: Boolean,
+              default : false
+            },
             count: {
               type: Number,
               default: 0,
@@ -45,7 +60,6 @@ const shopschema = mongoose.Schema(
   },
   { strict: false, timestamps: true }
 );
-
 const shopModel = mongoose.model("shop", shopschema);
 
 module.exports = shopModel;

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Productschema = mongoose.Schema(
   {
+    id: Number,
     name: String,
     image: String,
     category_id: String,
@@ -14,11 +15,9 @@ const Productschema = mongoose.Schema(
       default: "working",
     },
     desc: String,
-    
   },
   { strict: false,timestamps: true }
 );
-
 const product = mongoose.model("product", Productschema);
 
 module.exports = product;

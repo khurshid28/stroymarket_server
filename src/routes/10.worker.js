@@ -11,6 +11,6 @@ router.post("/create",upload("public/worker/").single("image"),workerController.
 router.get("/all",workerController.all);
 router.get("/",workerController.getbyServiceId);
 router.delete("/delete/:id",workerController.delete);
-// router.put("/:id",workerController.edit);
+router.get("/:id",workerController.getbyId);
 
 module.exports = router;

@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const oneMonthFromNow = require("../utils/oneMonthfromNow");
 const workerschema = mongoose.Schema(
   {
+    id: Number,
     fullname: String,
     phone: String,
     service_id: String,
@@ -27,7 +28,6 @@ const workerschema = mongoose.Schema(
   },
   { strict: false,timestamps: true }
 );
-
 const worker = mongoose.model("worker", workerschema);
 
 module.exports = worker;

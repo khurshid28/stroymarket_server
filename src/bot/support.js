@@ -4,9 +4,13 @@ const bot = new TelegramBot(process.env.SUPPORT_BOT_TOKEN, { polling: true });
 let admin = 536509231;
 let orderModel = require("../models/14.order");
 let adminModel = require("../models/2.admin");
-
+let shopProductModel = require("../models/16.shopProduct");
+let productModel = require("../models/7.product");
 let shopModel = require("../models/5.shop");
 let paymentModel = require("../models/8.payment");
+let userModel = require("../models/1.user");
+
+const axios = require("axios");
 
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
@@ -326,7 +330,6 @@ bot.on("message", async (msg) => {
         let order = await orderModel.aggregate([
           {
             $match: {
-             
               shop_id: admin_client.shop_id,
               createdAt: {
                 $gte: new Date(
@@ -383,6 +386,15 @@ bot.on("message", async (msg) => {
       }
     }
   }
+
+  if (msg.text?.startsWith("http")) {
+    try {
+      const url = new URL(msg.text);
+      console.log(url.searchParams.get("q").split(":"));
+      let [lat, lon] = url.searchParams.get("q").split(":")[1].split(" ");
+      bot.sendLocation(chatId, lat, lon);
+    } catch (error) {}
+  }
 });
 bot.on("callback_query", async (msg) => {
   console.log(msg.data);
@@ -393,26 +405,27 @@ bot.on("callback_query", async (msg) => {
     let oldOrder = await orderModel.findOne({
       _id,
     });
-    if (oldOrder.status != "started") {
-      bot
-        .editMessageReplyMarkup(
-          {
-            reply_markup: JSON.stringify({
-              keyboard: [],
-            }),
-          },
-          {
-            message_id: msg.message.message_id,
-            chat_id: msg.from.id,
-            inline_message_id: msg.message.message_id,
-          }
-        )
-        .then((v) => {
-          bot.sendMessage(msg.from.id, "⚠️ This order is already finished");
-        });
+    if (!oldOrder) return;
+    // if (oldOrder.status != "started") {
+    //   bot
+    //     .editMessageReplyMarkup(
+    //       {
+    //         reply_markup: JSON.stringify({
+    //           keyboard: [],
+    //         }),
+    //       },
+    //       {
+    //         message_id: msg.message.message_id,
+    //         chat_id: msg.from.id,
+    //         inline_message_id: msg.message.message_id,
+    //       }
+    //     )
+    //     .then((v) => {
+    //       bot.sendMessage(msg.from.id, "⚠️ This order is already finished");
+    //     });
 
-      return;
-    }
+    //   return;
+    // }
 
     let order = await orderModel.findByIdAndUpdate(
       {
@@ -424,24 +437,91 @@ bot.on("callback_query", async (msg) => {
     );
 
     let shop = await shopModel.findOne({ _id: order.shop_id });
-    order.products.map(async (item) => {
-      console.log(item);
-      let index = shop.products.findIndex((x) => x._id == item.product_id);
-      console.log(index);
-      // console.log(shop.products[index]);
-      let kindex = shop.products[index].items.findIndex(
-        (x) => x._id == item.item_id
-      );
-      console.log(kindex);
-      // console.log(shop.products[index].items[kindex]);
-      shop.products[index].items[kindex].count -= item.count;
-      await shopModel.updateOne(
-        { _id: order.shop_id },
+    console.log(order.products);
+    // let pArr = order.products.map((e)=>e["id"])
+
+    await order.products.forEach(async (p) => {
+      let shopProductOne = await shopProductModel.findOne({
+        _id: p["id"],
+      });
+
+      await shopProductModel.updateOne(
         {
-          products: shop.products,
+          _id: p["id"],
+        },
+        {
+          count: shopProductOne.count - p.count,
+        }
+      );
+      let ProductOne = await productModel.findOne({
+        _id: p["product_id"],
+      });
+
+      await productModel.updateOne(
+        {
+          _id: p["product_id"],
+        },
+        {
+          count: ProductOne.count + p.count,
         }
       );
     });
+
+    let user = await userModel.findOne({
+      _id: order.user_id,
+    });
+    let resToken = await axios.post(
+      process.env.SMS_LOGIN_URL,
+      {
+        email: process.env.SMS_EMAIL,
+        password: process.env.SMS_PASSWORD,
+      },
+
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    axios
+      .post(
+        process.env.SMS_SEND_URL,
+        {
+          message: `Stroymarket: Sizning buyurtmangiz qabul qilindi !!! Buyurtma raqami : ${order.order_id}`,
+          from: "4546",
+          mobile_phone: user.phone,
+          callback_url: process.env.SMS_CALLBACK_URL,
+        },
+
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + resToken.data["data"]["token"],
+          },
+        }
+      )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+
+    // order.products.map(async (item) => {
+    //   console.log(item);
+    //   let index = shop.products.findIndex((x) => x._id == item.product_id);
+    //   console.log(index);
+    //   // console.log(shop.products[index]);
+    //   let kindex = shop.products[index].items.findIndex(
+    //     (x) => x._id == item.item_id
+    //   );
+    //   console.log(kindex);
+    //   // console.log(shop.products[index].items[kindex]);
+    //   shop.products[index].items[kindex].count -= item.count;
+
+    //   await shopModel.updateOne(
+    //     { _id: order.shop_id },
+    //     {
+    //       products: shop.products,
+    //     }
+    //   );
+    // });
     bot
       .editMessageReplyMarkup(
         {
@@ -473,6 +553,13 @@ bot.on("callback_query", async (msg) => {
   }
 });
 
+bot.on("location", (msg) => {
+  bot.sendMessage(
+    msg.from.id,
+    "lat : " + msg.location.latitude + "\n" + "lon : " + msg.location.longitude
+  );
+  console.log(msg);
+});
 bot.on("polling_error", console.log);
 
 module.exports = bot;

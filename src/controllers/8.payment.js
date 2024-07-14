@@ -20,6 +20,7 @@ class PaymentController {
         type: "shop",
         shop_id,
         amount,
+        // start_date
         
       }
       let shopOne = await shopModel.findOne({
@@ -30,7 +31,7 @@ class PaymentController {
       }
       console.log(shopOne);
       shopOne.expired ??= new Date();
-      paymentData.start_date =JSON.parse(JSON.stringify(shopOne.expired)); ;
+      paymentData.start_date =JSON.parse(JSON.stringify(shopOne.expired));
       let newExpired = oneMonthFromNow(shopOne.expired, month)
       paymentData.end_date = newExpired;
       let v1 = await shopModel.updateOne(
@@ -100,7 +101,7 @@ class PaymentController {
         amount,
       });
 
-      return res.status(200).json({
+      return res.status(201).json({
         message: "success",
         data: payment,
         updatedExpiredData,
@@ -140,7 +141,7 @@ class PaymentController {
         amount,
       });
 
-      return res.status(200).json({
+      return res.status(201).json({
         message: "success",
         data: payment,
         updatedExpiredData,
@@ -150,7 +151,7 @@ class PaymentController {
       return next(new InternalServerError(500, error.message));
     }
   }
-
+  
   async all(req, res, next) {
     try {
       let all = await paymentModel.find({});

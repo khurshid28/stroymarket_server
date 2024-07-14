@@ -7,6 +7,7 @@ const fileFilter = (req, file, cb) => {
 	if (file.mimetype.startsWith("image/")) {
 		cb(null, true);
 	} else {
+		console.log(file.mimetype);
 		cb(new BadRequestError(400, "Only image files are allowed!"), false);
 	}
 };

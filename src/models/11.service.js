@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Serviceschema = mongoose.Schema(
   {
+    id: Number,
     name: String,
     image: String,
     work_status: {
@@ -12,7 +13,6 @@ const Serviceschema = mongoose.Schema(
   },
   { strict: false,timestamps: true }
 );
-
 const service = mongoose.model("service", Serviceschema);
 
 module.exports = service;

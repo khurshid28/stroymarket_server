@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Categoryschema = mongoose.Schema(
   {
+    id: Number,
     name: String,
     image: String,
     work_status: {

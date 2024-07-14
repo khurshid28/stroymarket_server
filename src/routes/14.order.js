@@ -4,7 +4,7 @@ const router = Router();
 
 let orderController = require("../controllers/14.order");
 const upload = require("../utils/upload");
-
+router.get("/",orderController.getbyShopId);
 router.post("/create", orderController.create);
 router.post("/finish/:id",orderController.finish);
 router.post("/cancel/:id",orderController.cancel);

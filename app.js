@@ -31,16 +31,16 @@ const PORT = process.env.PORT || 5090;
 
 
 app.use(express.json({limit: '20mb'}),);
-// app.use(express.urlencoded({extended:false,limit: '20mb',parameterLimit : 10}));
-
+app.use(express.urlencoded({extended:true,limit: '20mb',parameterLimit : 20}));
+app.use(morgan("dev"), cors(), rateLimit(),authMiddleware );
 
 // testing server
-app.get("/api/v1", (req, res) => res.send("STROY MARKET API"));
+app.get("/", (req, res) => res.send("STROY MARKET API"));
 
 // all routes
-app.use("/api/v1",router);
+app.use("",router);
 
-app.use(morgan("dev"), cors(), rateLimit(),authMiddleware );
+
 
 
 

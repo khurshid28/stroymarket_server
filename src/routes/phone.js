@@ -4,7 +4,7 @@ const router = Router();
 
 let phoneController =require("../controllers/phone")
 
-router.post("/",phoneController.phone);
+router.post("/send",phoneController.phone);
 router.post("/verify",phoneController.verify);
 
 module.exports = router;

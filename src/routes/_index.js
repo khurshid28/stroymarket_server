@@ -11,6 +11,8 @@ const serviceRouter = require("./11.service");
 const workerRouter = require("./10.worker");
 const categoryRouter = require("./6.category");
 const productRouter = require("./7.product");
+let shopProductRouter = require("./16.shopProduct");
+
 
 const newsRouter = require("./13.news");
 const adsRouter = require("./12.ads");
@@ -32,6 +34,7 @@ router.use("/worker",checkToken,workerRouter);
 
 router.use("/category",checkToken,categoryRouter);
 router.use("/product",checkToken,productRouter);
+router.use("/shop-product",shopProductRouter);
 
 
 router.use("/news",checkToken,newsRouter);

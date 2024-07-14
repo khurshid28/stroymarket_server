@@ -2,8 +2,10 @@
 
 
 const mongoose = require("mongoose");
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const phoneschema = mongoose.Schema({
+    id: Number,
     num:  String,
     code : String,
     date: {

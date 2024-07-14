@@ -66,12 +66,13 @@ class WorkerController {
   async getbyId(req, res, next) {
     try {
       let {id} = req.params;
-      let super_admin = await workerModel.findById(id)
-      if (super_admin) {
+      let worker = await workerModel.findById(id);
+      console.log(">> worker : ");
+      console.log(worker);
+      if (worker) {
         return res.status(200).json({
             message: "success",
-            data:super_admin
-           
+            data:worker
           });
       }
       return next(new BadRequestError(400, "Not found"));

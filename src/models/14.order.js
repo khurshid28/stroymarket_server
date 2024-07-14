@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 const Orderschema = mongoose.Schema(
   {
+    order_id: Number,
     user_id: String,
     shop_id: String,
     status: {
@@ -18,22 +20,21 @@ const Orderschema = mongoose.Schema(
     amount: Number,
     products: [
       {
-        product_id: String,
+        id: String,
         name : String,
-        category_id: String,
+        product_name : String,
+        image : String,
+        shop_id: String,
+        product_id :String,
         price: Number,
-        count: Number,
-        color: {
-          name :String,
-          hash: String
-        },
-
+        count: Number
       },
     ],
   },
+
   { strict: false, timestamps: true }
 );
-
+Orderschema.plugin(AutoIncrement, {inc_field: 'order_id'});
 const order = mongoose.model("order", Orderschema);
 
 module.exports = order;

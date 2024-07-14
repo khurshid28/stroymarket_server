@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Newsschema = mongoose.Schema(
   {
+    id: Number,
     image: String,
     title: String,
     subtitle: String,
@@ -8,7 +9,6 @@ const Newsschema = mongoose.Schema(
   },
   { strict: false,timestamps: true }
 );
-
 const news = mongoose.model("news", Newsschema);
 
 module.exports = news;

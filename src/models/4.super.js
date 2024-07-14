@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 const superschema = mongoose.Schema(
   {
+    id: Number,
     fullname: String,
     phone: String,
     work_status: {

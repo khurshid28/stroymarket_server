@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const paymentschema = mongoose.Schema(
   {
+    id: Number,
     type :String, // "shop","worker","ad"
     shop_id: String,
     worker_id:String,
@@ -13,7 +14,6 @@ const paymentschema = mongoose.Schema(
   },
   { strict: false,timestamps: true }
 );
-
 const payment = mongoose.model("payment", paymentschema);
 
 module.exports = payment;

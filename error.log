@@ -64,3 +64,405 @@ Require stack:
 /api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1711123057913 ___ InternalServerError ___ Promise.map is not a function
 /api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1711123114656 ___ InternalServerError ___ Promise.map is not a constructor
 /api/v1/order/finish/65fdb6d0cd24aff5dee98a83?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1711126900172 ___ InternalServerError ___ _id is not defined
+/api/v1/login?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712223113762 ___ InternalServerError ___ Cannot read properties of null (reading '_id')
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=43255432587 ___ GET ___ 1712234084050 ___ InternalServerError ___ Cast to ObjectId failed for value "{ shop_id: undefined }" (type Object) at path "_id" for model "order"
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712234255121 ___ InternalServerError ___ Cast to ObjectId failed for value "{ shop_id: undefined }" (type Object) at path "_id" for model "order"
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712234341767 ___ InternalServerError ___ Cast to ObjectId failed for value "{ shop_id: '65fdb54fcae511f5f7fd701a' }" (type Object) at path "_id" for model "order"
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712251163268 ___ InternalServerError ___ Cannot read properties of undefined (reading 'sealsModel')
+/api/v1/order/finish/65fdb6d0cd24aff5dee98a83?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712251569217 ___ InternalServerError ___ orderModel.aggregate(...).pretty is not a function
+/api/v1/order/finish/65fdb6d0cd24aff5dee98a83?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712252095844 ___ InternalServerError ___ Aggregate has empty pipeline
+/api/v1/order/finish/65fdb6d0cd24aff5dee98a83?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712253419102 ___ InternalServerError ___ Cannot read properties of null (reading 'status')
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712255384457 ___ InternalServerError ___ orderModel.find(...).sort(...).aggregate is not a function
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712255400118 ___ InternalServerError ___ orderModel.find(...).sort(...).aggregate is not a function
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712255565169 ___ InternalServerError ___ userId is not defined
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712255594950 ___ InternalServerError ___ Class constructor ObjectId cannot be invoked without 'new'
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712255654798 ___ InternalServerError ___ Class constructor ObjectId cannot be invoked without 'new'
+/api/v1/order?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&shop_id=65fdb54fcae511f5f7fd701a ___ GET ___ 1712255847908 ___ InternalServerError ___ log is not defined
+/api/v1/order/660ef3ada354c64eef6c474c?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712256470060 ___ InternalServerError ___ ObjectId is not defined
+/api/v1/order/660ef3ada354c64eef6c474c?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712256542323 ___ InternalServerError ___ Class constructor ObjectId cannot be invoked without 'new'
+/api/v1/order/660f10719aede59e62e0f9ba?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712266001355 ___ InternalServerError ___ Cannot read properties of null (reading 'products')
+/api/v1/order/660f10719aede59e62e0f9ba?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712266074777 ___ InternalServerError ___ Cannot read properties of null (reading 'products')
+/api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712266613781 ___ InternalServerError ___ Cannot read properties of undefined (reading 'id')
+/api/v1/order/660f1ee2c1e22d83eda9fa62?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712267076256 ___ InternalServerError ___ Cannot read properties of undefined (reading 'name')
+/api/v1/order/660f1ee2c1e22d83eda9fa62?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712267104593 ___ InternalServerError ___ Cannot read properties of undefined (reading 'name')
+/api/v1/order/660f1ee2c1e22d83eda9fa62?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712267143637 ___ InternalServerError ___ Cannot read properties of undefined (reading 'name')
+/api/v1/order/660f1ee2c1e22d83eda9fa62?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712267168446 ___ InternalServerError ___ Cannot read properties of undefined (reading 'name')
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712333811513 ___ InternalServerError ___ shop validation failed: location: Cast to Object failed for value "`'{"lat":41.555,"lon":69}'`" (type string) at path "location"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712333831949 ___ InternalServerError ___ shop validation failed: location: Cast to Object failed for value "{"lat":41.555,"lon":69}" (type string) at path "location"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334047064 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[ { lat: 41.555, lon: 69 } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334083510 ___ InternalServerError ___ Unexpected token ''', "'{"lat":41"... is not valid JSON
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334143165 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334145503 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334224488 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334261294 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334343276 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334382593 ___ InternalServerError ___ TRUE is not defined
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334406057 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334407407 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334453711 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712334671134 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712336668692 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340179380 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340214188 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340431113 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340510181 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[ [Object: null prototype] { type: 'YANDEX', value: 'true' } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340511362 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[ [Object: null prototype] { type: 'YANDEX', value: 'true' } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340512150 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[ [Object: null prototype] { type: 'YANDEX', value: 'true' } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340512936 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[ [Object: null prototype] { type: 'YANDEX', value: 'true' } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340570008 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340602228 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[ { type: 'YANDEX' }, { type: 'FIXED' }, { type: 'MARKET' } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340725159 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340984352 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340985526 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340991611 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340992482 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340993150 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340994131 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712340995192 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712341038433 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712341123657 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712342030029 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712342034559 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712342092282 ___ InternalServerError ___ shop validation failed: types.0: Cast to [string] failed for value "[ { type: 'YANDEX', value: true } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712342125821 ___ InternalServerError ___ Unexpected token 'o', "[object Obj"... is not valid JSON
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712342126951 ___ InternalServerError ___ Unexpected token 'o', "[object Obj"... is not valid JSON
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347164195 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347221506 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347262944 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347311182 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347331504 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347401282 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347456845 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347506542 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347593555 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347646024 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347662572 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347717268 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "delivery_types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347718570 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "delivery_types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347779701 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "delivery_types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347806291 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347858030 ___ InternalServerError ___ Cast to [string] failed for value "[ { type: 'YANDEX', value: true } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347859292 ___ InternalServerError ___ Cast to [string] failed for value "[ { type: 'YANDEX', value: true } ]" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347891156 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: 'true' },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347961360 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347962619 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347963444 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/shop/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712347964252 ___ InternalServerError ___ Cast to [string] failed for value "[\n' +
+  "  { type: 'YANDEX', value: true },\n" +
+  "  { type: 'FIXED', value: true },\n" +
+  "  { type: 'MARKET', value: true }\n" +
+  ']" (type string) at path "types.0" because of "CastError"
+/api/v1/product/65d4d307ea2962cf1507e5a9?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712350975922 ___ InternalServerError ___ Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+/api/v1/product/65d4d322ea2962cf1507e5ae?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712351196715 ___ InternalServerError ___ Cannot read properties of null (reading '_doc')
+/api/v1/product/65d4d322ea2962cf1507e5ae?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712351439937 ___ InternalServerError ___ admin is not defined
+/api/v1/product/65d4d307ea2962cf1507e5a9?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712351806094 ___ InternalServerError ___ res.status is not a function
+/api/v1/product/65d4d322ea2962cf1507e5ae?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712353033629 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/product/65d4d31eea2962cf1507e5ac?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712361089740 ___ InternalServerError ___ iem is not defined
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362513847 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362575725 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362637000 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362669917 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362801337 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362802558 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362952495 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362953684 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362954465 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362955144 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712362998334 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712363023790 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712363153798 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712363155096 ___ InternalServerError ___ Cast to ObjectId failed for value "profile" (type string) at path "_id" for model "admin"
+/api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712363219417 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/661096d3ff52c82f5f2fc2ab?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712363305485 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/661096d3ff52c82f5f2fc2ab?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712363321667 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712363338670 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712399283869 ___ InternalServerError ___ Cannot read properties of undefined (reading 'length')
+/api/v1/order/6610974aff52c82f5f2fc30c?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712401113845 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/661096d3ff52c82f5f2fc2ab?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712401115768 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712404577733 ___ InternalServerError ___ PlanExecutor error during aggregation :: caused by :: input to $map must be an array not int
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712404610825 ___ InternalServerError ___ Use of undefined variable: a
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712405119939 ___ InternalServerError ___ PlanExecutor error during aggregation :: caused by :: $arrayElemAt's first argument must be an array, but is int
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712405130866 ___ InternalServerError ___ PlanExecutor error during aggregation :: caused by :: $arrayElemAt's first argument must be an array, but is int
+/api/v1/order/661096d3ff52c82f5f2fc2ab?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712442586304 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/product/65d4dd66571bb40698ee0120?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712444366980 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/product/65d4d2ed8976693bfc7d45ca?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712444368562 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/product/65d4d2ed8976693bfc7d45ca?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712444371585 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/6610974aff52c82f5f2fc30c?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712444409717 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/6610974aff52c82f5f2fc30c?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712444456548 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712446793745 ___ InternalServerError ___ unknown group operator '$cond'
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712446833092 ___ InternalServerError ___ unknown group operator '$cond'
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712446924758 ___ InternalServerError ___ unknown group operator '$cond'
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712447060221 ___ InternalServerError ___ unknown group operator '$cond'
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712447142195 ___ InternalServerError ___ An object representing an expression must have exactly one field: { $cond: { if: { $eq: [ "$delivery_type", "YANDEX" ] }, then: { $sum: "$amount" } }, else: 0 }
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712447143347 ___ InternalServerError ___ An object representing an expression must have exactly one field: { $cond: { if: { $eq: [ "$delivery_type", "YANDEX" ] }, then: { $sum: "$amount" } }, else: 0 }
+/api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712447390083 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712449360694 ___ InternalServerError ___ Cannot read properties of null (reading 'phone')
+/api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712449426353 ___ InternalServerError ___ Cannot read properties of null (reading 'phone')
+/api/v1/order/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712449468226 ___ InternalServerError ___ user is not defined
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712450681545 ___ InternalServerError ___ Expression $eq takes exactly 2 arguments. 1 were passed in.
+/api/v1/admin/profile?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1712450918589 ___ InternalServerError ___ Missing 'if' parameter to $cond
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525410505 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525497844 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525587950 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525642135 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525698919 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525759589 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525818812 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525871834 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712525945945 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712526259503 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712526344955 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712526453489 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/send?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712526519275 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712526757354 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: null }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712526877943 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: 10 }
+/api/v1/phone/verify?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1712527179703 ___ InternalServerError ___ E11000 duplicate key error collection: test.users index: id_1 dup key: { id: 10 }
+/api/v1/shop/all/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714768945754 ___ InternalServerError ___ Cast to ObjectId failed for value "all" (type string) at path "_id" for model "shop"
+/api/v1/shop/all/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714769041148 ___ InternalServerError ___ Cast to ObjectId failed for value "all" (type string) at path "_id" for model "shop"
+/api/v1/shop/all/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714769098006 ___ InternalServerError ___ Cast to ObjectId failed for value "all" (type string) at path "_id" for model "shop"
+/api/v1/shop/65da1f6133d3fbc3ca5eea65?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714772094021 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66105c14f22b97fd87136547?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714772139962 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66105c14f22b97fd87136547?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714772152662 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66105b3b6ec981f08a14f601?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714772237199 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65da1f6133d3fbc3ca5eea65?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714773026226 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66105972345c5d6c632a256d?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714773042307 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65da1f6133d3fbc3ca5eea65?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714774760644 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65da1f6133d3fbc3ca5eea65?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714775667850 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66105c14f22b97fd87136547?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714775687452 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66105b3c6ec981f08a14f604?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714775689829 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66105ad234deb43ea8bb2f79?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714775692225 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65da1e6d8a5e0c0ca1e394e7?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714852263604 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65d9b70c8a5e0c0ca1e394e5?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714852430122 ___ InternalServerError ___ Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+/api/v1/shop/65d9b70c8a5e0c0ca1e394e5?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714852453386 ___ InternalServerError ___ Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+/api/v1/shop/65d9b70c8a5e0c0ca1e394e5?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714852496981 ___ InternalServerError ___ Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+/api/v1/shop/65d9b70c8a5e0c0ca1e394e5?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714853076366 ___ InternalServerError ___ Cast to ObjectId failed for value "101" (type number) at path "_id" for model "product"
+/api/v1/shop/65d9b70c8a5e0c0ca1e394e5?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714853132873 ___ InternalServerError ___ Cast to ObjectId failed for value "101" (type number) at path "_id" for model "product"
+/api/v1/shop/65da1e6d8a5e0c0ca1e394e7?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714854543371 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66105c14f22b97fd87136547?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714854548019 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65da1e6d8a5e0c0ca1e394e7?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714854552240 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65da1ead8a5e0c0ca1e394e9?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714854556077 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop-product/all-in-product?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&product_id=+&shop_id= ___ GET ___ 1714856176933 ___ InternalServerError ___ Cast to ObjectId failed for value " " (type string) at path "_id" for model "product"
+/api/v1/shop-product/all-in-product?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34&product_id=65fdabc0cb64865389f8d47d&shop_id=65d9b70c8a5e0c0ca1e394e5 ___ GET ___ 1714856775233 ___ InternalServerError ___ productModel is not defined
+/api/v1/shop/65da1e6d8a5e0c0ca1e394e7?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714906076160 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65da1f6133d3fbc3ca5eea65?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1714938358191 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009684489 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009687903 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009690928 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009693894 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009697640 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009699944 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009716210 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009779188 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009780878 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715009814887 ___ InternalServerError ___ Cannot read properties of undefined (reading 'map')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715010044880 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715010203811 ___ InternalServerError ___ Cannot read properties of undefined (reading 'items')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715010597789 ___ InternalServerError ___ receive_type is not defined
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715010640540 ___ InternalServerError ___ productNames is not defined
+/api/v1/shop/65da1f6133d3fbc3ca5eea65?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1715018772660 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/order/6639c83fe7a9fc3bfc2e0413?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1715063590966 ___ InternalServerError ___ Cannot read properties of undefined (reading '0')
+/api/v1/order/6639ca2f478e1ba71b6c66b6?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1715063791023 ___ InternalServerError ___ Cannot read properties of undefined (reading 'products')
+/api/v1/shop/65d45586633dcd3836e7450c?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1715071984455 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65d4577cf01aee4d68c65339?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1715071990042 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/65da1f6133d3fbc3ca5eea65?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1715086240773 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/order/create/?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1715160722735 ___ InternalServerError ___ Cannot read properties of null (reading 'lat')
+/api/v1/shop/66103c93cf63c254b83680ea?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1716203782991 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/shop/66103c93cf63c254b83680ea?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ GET ___ 1716203824584 ___ InternalServerError ___ Cannot read properties of null (reading 'fullname')
+/api/v1/ads/create?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1716667647414 ___ InternalServerError ___ ads validation failed: expired: Cast to date failed for value "Invalid Date" (type Date) at path "expired"
+/api/v1/payment/ads?key=7whKFhq4Ri3I7TNW2x0G2fae4tges4tf3dss3r34 ___ POST ___ 1716672587493 ___ InternalServerError ___ Cast to ObjectId failed for value "333333" (type string) at path "_id" for model "ads"
