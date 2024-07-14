@@ -70,5 +70,5 @@ app.listen(PORT, async () => {
 require("./src/utils/schedule")
 
 //bot
-require("./src/bot/support")
+// require("./src/bot/support")
 
