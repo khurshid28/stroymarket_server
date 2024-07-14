@@ -35,10 +35,10 @@ app.use(express.urlencoded({extended:true,limit: '20mb',parameterLimit : 20}));
 app.use(morgan("dev"), cors(), rateLimit(),authMiddleware );
 
 // testing server
-app.get("/", (req, res) => res.send("STROY MARKET API"));
+app.get("/api", (req, res) => res.send("STROY MARKET API"));
 
 // all routes
-app.use("/v1",router);
+app.use("/api/v1",router);
 
 
 
