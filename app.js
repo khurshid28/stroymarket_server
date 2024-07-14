@@ -38,7 +38,7 @@ app.use(morgan("dev"), cors(), rateLimit(),authMiddleware );
 app.get("/", (req, res) => res.send("STROY MARKET API"));
 
 // all routes
-app.use("",router);
+app.use("/",router);
 
 
 
