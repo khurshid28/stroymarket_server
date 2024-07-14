@@ -3,6 +3,8 @@ const JWT = require("jsonwebtoken");
 
 module.exports = {
 	sign: (payload) => {
+		console.log(">>>>" ,process.env.JWT_SECRET);
+		console.log(">>>>" ,process.env.JWT_EXPIRATION_TIME);
 		try {
 			return JWT.sign(payload, process.env.JWT_SECRET, {
 				expiresIn: process.env.JWT_EXPIRATION_TIME,
