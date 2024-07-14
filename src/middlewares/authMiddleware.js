@@ -2,7 +2,7 @@ const { InternalServerError, ForbiddenError } = require("../utils/errors.js");
 
 module.exports = async (req, res, next) => {
 	try {
-		if (req.query && req.query.key === process.env.AUTH_KEY_API) {
+		if (req.query && req.query.key == process.env.AUTH_KEY_API) {
 			return next();
 		}
 
