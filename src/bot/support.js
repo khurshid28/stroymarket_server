@@ -1,6 +1,7 @@
 const TelegramBot = require("node-telegram-bot-api");
 let toMoney = require("../utils/toMoney");
 const bot = new TelegramBot(process.env.SUPPORT_BOT_TOKEN, { polling: true });
+console.log(process.env.SUPPORT_BOT_TOKEN)
 let admin = 536509231;
 let orderModel = require("../models/14.order");
 let adminModel = require("../models/2.admin");

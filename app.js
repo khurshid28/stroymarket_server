@@ -4,9 +4,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 
 
-dotenv.config(
-  // { path: path.join(process.cwd(), ".env") }
-  );
+dotenv.config();
 require("./src/config/db.js");
 
 var express = require("express");
