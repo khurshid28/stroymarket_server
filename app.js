@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 
 
-// dotenv.config();
+dotenv.config();
 require("./src/config/db.js");
 
 var express = require("express");

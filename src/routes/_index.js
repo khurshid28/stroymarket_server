@@ -32,7 +32,7 @@ router.use("/shop",checkToken,shopRouter);
 router.use("/service",checkToken,serviceRouter);
 router.use("/worker",checkToken,workerRouter);
 
-router.use("/category",checkToken,categoryRouter);
+router.use("/category",categoryRouter);
 router.use("/product",checkToken,productRouter);
 router.use("/shop-product",shopProductRouter);
 

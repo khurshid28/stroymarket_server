@@ -6,15 +6,16 @@ let {
   BadRequestError,
   NotFoundError,
 } = require("../utils/errors");
+const product = require("../models/7.product");
 
 class ProductController {
   async create(req, res, next) {
     try {
-      let { name, category_id, filename, desc, type } = req.body;
+      let {  name_uz,name_ru,name_en, category_id, filename, desc, type } = req.body;
 
       let product = await productModel.create({
         category_id,
-        name,
+        name_uz,name_ru,name_en,
         image: filename ? "/static/product/" + filename : null,
         desc,
         type,
@@ -29,13 +30,21 @@ class ProductController {
       return next(new InternalServerError(500, error.message));
     }
   }
-  async delete(req, res, next) {
+  async update(req, res, next) {
     try {
       let { id } = req.params;
-      let value = await productModel.deleteOne({ _id: id });
-      if (value.deletedCount > 0) {
+      let {  name_uz,name_ru,name_en, desc, filename,category_id } = req.body;
+      let value = await productModel.updateOne({ _id: id },{
+        name_uz,name_ru,name_en,
+        desc,
+        category_id,
+        image: filename ? "/static/product/" + filename : undefined,
+      });
+      if (value) {
+        let category = await productModel.findById(id);
         return res.status(200).json({
-          message: "super is deleted",
+          message: "product is updated",
+          data: category
         });
       } else {
         return next(new BadRequestError(400, "Not found"));
@@ -45,7 +54,26 @@ class ProductController {
       return next(new InternalServerError(500, error.message));
     }
   }
-
+  async delete(req, res, next) {
+    try {
+      let { id } = req.params;
+      let value = await productModel.deleteOne({ _id: id });
+      if (value.deletedCount > 0) {
+        return res.status(200).json({
+          message: "product is deleted",
+          data :{
+            _id :id
+          }
+        });
+      } else {
+        return next(new BadRequestError(400, "Not found"));
+      }
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
+  
   async deleteItem(req, res, next) {
     try {
       let { id, item_id } = req.params;

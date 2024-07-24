@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const Categoryschema = mongoose.Schema(
   {
     id: Number,
-    name: String,
+    name_uz: String,
+    name_ru: String,
+    name_en: String,
     image: String,
     work_status: {
       type: String,

@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const Productschema = mongoose.Schema(
   {
     id: Number,
-    name: String,
+    name_uz: String,
+    name_ru: String,
+    name_en: String,
     image: String,
     category_id: String,
     type: String, // null,color,weight,length,size

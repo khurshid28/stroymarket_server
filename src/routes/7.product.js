@@ -14,6 +14,7 @@ router.get("/more",productController.moreAll);
 router.get("/",productController.getbyCategoryId);
 router.get("/:id",productController.getbyId);
 router.delete("/:id",productController.delete);
+router.put("/:id",upload("public/product/").single("image"),productController.update);
 router.delete("/:id/:item_id",productController.deleteItem);
 // router.put("/:id",categoryController.edit);
 
