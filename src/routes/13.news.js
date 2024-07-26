@@ -10,6 +10,6 @@ const upload = require("../utils/upload");
 router.post("/create",upload("public/news/").single("image"),newsController.create);
 router.get("/all",newsController.all);
 router.delete("/delete/:id",newsController.delete);
-// router.put("/:id",serviceController.edit);
+router.put("/:id",upload("public/news/").single("image"),newsController.update);
 
 module.exports = router;

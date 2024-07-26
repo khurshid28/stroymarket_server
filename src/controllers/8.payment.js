@@ -16,13 +16,13 @@ class PaymentController {
   async adminAndShop(req, res, next) {
     try {
       let { month, shop_id, amount } = req.body;
-      var paymentData ={
+      var paymentData = {
         type: "shop",
         shop_id,
         amount,
+        month
         // start_date
-        
-      }
+      };
       let shopOne = await shopModel.findOne({
         _id: shop_id,
       });
@@ -31,8 +31,8 @@ class PaymentController {
       }
       console.log(shopOne);
       shopOne.expired ??= new Date();
-      paymentData.start_date =JSON.parse(JSON.stringify(shopOne.expired));
-      let newExpired = oneMonthFromNow(shopOne.expired, month)
+      paymentData.start_date = JSON.parse(JSON.stringify(shopOne.expired));
+      let newExpired = oneMonthFromNow(shopOne.expired, month);
       paymentData.end_date = newExpired;
       let v1 = await shopModel.updateOne(
         {
@@ -59,7 +59,6 @@ class PaymentController {
         shop_id: shop_id,
       });
 
-      
       let payment = await paymentModel.create(paymentData);
       return res.status(201).json({
         message: "success",
@@ -67,6 +66,55 @@ class PaymentController {
         updatedShop,
         updatedAdmin,
       });
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
+
+  async delete(req, res, next) {
+    try {
+      let { id } = req.params;
+      let value = await paymentModel.deleteOne({ _id: id });
+      if (value.deletedCount > 0) {
+        return res.status(200).json({
+          message: "payment is deleted",
+          data: {
+            _id: id,
+          },
+        });
+      } else {
+        return next(new BadRequestError(400, "Not found"));
+      }
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
+  async update(req, res, next) {
+    try {
+      let { id } = req.params;
+      let { month, shop_id, amount, ad_id, worker_id, type, } = req.body;
+      let value = await paymentModel.updateOne(
+        { _id: id },
+        {
+          month,
+          shop_id,
+          amount,
+          ad_id,
+          worker_id,
+          type,
+        }
+      );
+      if (value) {
+        let payment = await paymentModel.findById(id);
+        return res.status(200).json({
+          message: "payment is updated",
+          data: payment,
+        });
+      } else {
+        return next(new BadRequestError(400, "Not found"));
+      }
     } catch (error) {
       console.log(error);
       return next(new InternalServerError(500, error.message));
@@ -99,6 +147,7 @@ class PaymentController {
         type: "worker",
         worker_id,
         amount,
+        month
       });
 
       return res.status(201).json({
@@ -139,6 +188,7 @@ class PaymentController {
         type: "ad",
         ad_id,
         amount,
+        month
       });
 
       return res.status(201).json({
@@ -151,7 +201,7 @@ class PaymentController {
       return next(new InternalServerError(500, error.message));
     }
   }
-  
+
   async all(req, res, next) {
     try {
       let all = await paymentModel.find({});

@@ -5,20 +5,27 @@ let { InternalServerError, BadRequestError } = require("../utils/errors");
 class WorkerController {
   async create(req, res, next) {
     try {
-      let { fullname, phone, service_id,filename,amount,payment_type,desc } = req.body;
+      let {
+        fullname,
+        phone,
+        service_id,
+        filename,
+        amount,
+        payment_type,
+        desc,
+      } = req.body;
       let login = cryptoRandomString({ length: 10 });
       let password = cryptoRandomString({ length: 15 });
       let workerOne = await workerModel.create({
         service_id,
         fullname,
         phone,
-        image: filename ? "/static/worker/" + filename : null,
+        image: filename ? "/static/worker/" + filename : undefined,
         amount,
         payment_type,
         login,
         password,
         desc,
-        
       });
 
       return res.status(201).json({
@@ -30,18 +37,59 @@ class WorkerController {
       return next(new InternalServerError(500, error.message));
     }
   }
+  async update(req, res, next) {
+    try {
+      let { id } = req.params;
+      console.log(req.body);
+      let {
+        fullname,
+        phone,
+        service_id,
+        filename,
+        amount,
+        payment_type,
+        desc,
+      } = req.body;
+      let value = await workerModel.updateOne(
+        { _id: id },
+        {
+          fullname,
+          phone,
+          service_id,
+          amount,
+          payment_type,
+          desc,
+          image: filename ? "/static/worker/" + filename : undefined,
+        }
+      );
+      if (value) {
+        let worker = await workerModel.findById(id);
+        return res.status(200).json({
+          message: "worker is updated",
+          data: worker,
+        });
+      } else {
+        return next(new BadRequestError(400, "Not found"));
+      }
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
   async delete(req, res, next) {
     try {
       let { id } = req.params;
-      let value =await workerModel.deleteOne({_id:id})
-     if (value.deletedCount > 0) {
+      let value = await workerModel.deleteOne({ _id: id });
+      if (value.deletedCount > 0) {
         return res.status(200).json({
-            message: "super is deleted",
-           
-          });
-     }else{
+          message: "product is deleted",
+          data: {
+            _id: id,
+          },
+        });
+      } else {
         return next(new BadRequestError(400, "Not found"));
-     }
+      }
     } catch (error) {
       console.log(error);
       return next(new InternalServerError(500, error.message));
@@ -50,12 +98,10 @@ class WorkerController {
 
   async all(req, res, next) {
     try {
-     
-      let all = await workerModel.find({})
+      let all = await workerModel.find({});
       return res.status(200).json({
         message: "success",
-        data:all
-       
+        data: all,
       });
     } catch (error) {
       console.log(error);
@@ -65,18 +111,17 @@ class WorkerController {
 
   async getbyId(req, res, next) {
     try {
-      let {id} = req.params;
+      let { id } = req.params;
       let worker = await workerModel.findById(id);
       console.log(">> worker : ");
       console.log(worker);
       if (worker) {
         return res.status(200).json({
-            message: "success",
-            data:worker
-          });
+          message: "success",
+          data: worker,
+        });
       }
       return next(new BadRequestError(400, "Not found"));
-     
     } catch (error) {
       console.log(error);
       return next(new InternalServerError(500, error.message));
@@ -84,27 +129,22 @@ class WorkerController {
   }
   async getbyServiceId(req, res, next) {
     try {
-      let {service_id} =req.query;
+      let { service_id } = req.query;
       let workers = await workerModel.find({
-        service_id
-      })
+        service_id,
+      });
       if (workers) {
         return res.status(200).json({
-            message: "success",
-            data:workers
-           
-          });
+          message: "success",
+          data: workers,
+        });
       }
       return next(new BadRequestError(400, "Not found"));
-     
     } catch (error) {
       console.log(error);
       return next(new InternalServerError(500, error.message));
     }
   }
-
-  
-  
 }
 
 module.exports = new WorkerController();

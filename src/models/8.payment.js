@@ -7,6 +7,7 @@ const paymentschema = mongoose.Schema(
     worker_id:String,
     ad_id:String,
     amount: Number,
+    month: Number,
     start_date : Date,
     end_date : Date,
 

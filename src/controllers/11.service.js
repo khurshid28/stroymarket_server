@@ -5,10 +5,10 @@ let { InternalServerError, BadRequestError } = require("../utils/errors");
 class ServiceController {
   async create(req, res, next) {
     try {
-      let { name, desc, filename } = req.body;
+      let { name_uz,name_ru,name_en, desc, filename } = req.body;
 
       let service = await serviceModel.create({
-        name,
+        name_uz,name_ru,name_en,
         desc,
         image: filename ? "/static/service/" + filename : null,
       });
@@ -23,13 +23,20 @@ class ServiceController {
     }
   }
 
-  async edit(req, res, next) {
+  async update(req, res, next) {
     try {
       let { id } = req.params;
-      let value = await serviceModel.deleteOne({ _id: id });
-      if (value.deletedCount > 0) {
+      let { name_uz,name_ru,name_en, desc, filename } = req.body;
+      let value = await serviceModel.updateOne({ _id: id },{
+        name_uz,name_ru,name_en,
+        desc,
+        image: filename ? "/static/service/" + filename : undefined,
+      });
+      if (value) {
+        let service = await serviceModel.findById(id);
         return res.status(200).json({
-          message: "super is deleted",
+          message: "service is updated",
+          data: service
         });
       } else {
         return next(new BadRequestError(400, "Not found"));
@@ -45,7 +52,10 @@ class ServiceController {
       let value = await serviceModel.deleteOne({ _id: id });
       if (value.deletedCount > 0) {
         return res.status(200).json({
-          message: "super is deleted",
+          message: "service is deleted",
+          data : {
+            _id : id
+          }
         });
       } else {
         return next(new BadRequestError(400, "Not found"));

@@ -20,6 +20,29 @@ class RegionController {
       return next(new InternalServerError(500, error.message));
     }
   }
+
+  async update(req, res, next) {
+    try {
+      let { id } = req.params;
+      let {  name } = req.body;
+      let value = await regionModel.updateOne({ _id: id },{
+        name
+      });
+      if (value) {
+        let region = await regionModel.findById(id);
+        return res.status(200).json({
+          message: "region is updated",
+          data: region
+        });
+      } else {
+        return next(new BadRequestError(400, "Not found"));
+      }
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
+
   async delete(req, res, next) {
     try {
       let { id } = req.params;
@@ -27,6 +50,9 @@ class RegionController {
      if (value.deletedCount > 0) {
         return res.status(200).json({
             message: "region is deleted",
+            data :{
+              _id :id
+            }
            
           });
      }else{

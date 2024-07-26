@@ -24,6 +24,31 @@ class NewsController {
       return next(new InternalServerError(500, error.message));
     }
   }
+
+  async update(req, res, next) {
+    try {
+      let { id } = req.params;
+      let {  title,subtitle, filename } = req.body;
+      let value = await newsModel.updateOne({ _id: id },{
+        title,
+        subtitle,
+        
+        image: filename ? "/static/news/" + filename : undefined,
+      });
+      if (value) {
+        let news = await newsModel.findById(id);
+        return res.status(200).json({
+          message: "news is updated",
+          data: news
+        });
+      } else {
+        return next(new BadRequestError(400, "Not found"));
+      }
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
   async delete(req, res, next) {
     try {
       let { id } = req.params;
@@ -31,6 +56,9 @@ class NewsController {
      if (value.deletedCount > 0) {
         return res.status(200).json({
             message: "super is deleted",
+            data :{
+              _id:id
+            }
            
           });
      }else{
