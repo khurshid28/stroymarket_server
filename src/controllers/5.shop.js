@@ -4,6 +4,7 @@ let adminModel = require("../models/2.admin");
 let shopProductModel = require("../models/16.shopProduct");
 let productModel = require("../models/7.product");
 let { InternalServerError, BadRequestError } = require("../utils/errors");
+const cryptoRandomString = require("secure-random-string");
 
 class ShopController {
   async all(req, res, next) {
@@ -18,10 +19,11 @@ class ShopController {
       } else {
         all = await shopModel.find({});
       }
-
+      let admins = await adminModel.find({});
       return res.status(200).json({
         message: "success",
         data: all,
+        admins :admins
       });
     } catch (error) {
       console.log(error);
@@ -40,6 +42,9 @@ class ShopController {
         delivery_type,
         delivery_amount,
         types,
+        admin_fullname,
+        admin_phone,
+        admin_chatid
       } = req.body;
       console.log(filename);
       let shop = await shopModel.create({
@@ -57,10 +62,26 @@ class ShopController {
         delivery_type,
         delivery_amount,
       });
-
+   
+          let login = cryptoRandomString({ length: 10 });
+          let password = cryptoRandomString({ length: 15 });
+         
+          let admin = await adminModel.create({
+            fullname : admin_fullname,
+            phone :admin_phone,
+            chat_id :admin_chatid,
+            shop_id : shop._id,
+            login,
+            password,
+            
+            
+          });
+       
       return res.status(201).json({
         message: "success",
         data: shop,
+        admin: admin
+        
       });
     } catch (error) {
       console.log(error);
@@ -197,6 +218,126 @@ class ShopController {
         message: "success",
         data: shop,
       });
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
+  async update(req, res, next) {
+    try {
+      let { id } = req.params;
+      let {
+        name,
+        desc,
+        filename,
+        region_id,
+        address,
+        location,
+        delivery_type,
+        delivery_amount,
+        types,
+        admin_fullname,
+        admin_phone,
+        admin_chatid,
+        admin_login,
+        admin_password
+      } = req.body;
+      // console.log(filename);
+      // let shop = await shopModel.create({
+      //   name,
+      //   desc,
+      //   image: filename ? "/static/shop/" + filename : null,
+      //   region_id,
+      //   address,
+      //   location: location,
+      //   types: types ??  [
+      //     { name: "YANDEX", value: "true" },
+      //     { name: "FIXED", value: "true" },
+      //     { name: "MARKET", value: "true" },
+      //   ],
+      //   delivery_type,
+      //   delivery_amount,
+      // });
+     
+      
+      
+      let value = await shopModel.updateOne({ _id: id },{
+        name,
+        desc,
+        image: filename ? "/static/shop/" + filename : undefined,
+        region_id,
+        address,
+        location: location,
+        types: types ??  [
+          { name: "YANDEX", value: "true" },
+          { name: "FIXED", value: "true" },
+          { name: "MARKET", value: "true" },
+        ],
+        delivery_type,
+        delivery_amount,
+      });
+      if( admin_fullname ||
+        admin_phone ||
+        admin_chatid ||
+        admin_login ||
+        admin_password
+        
+        ){
+        
+         
+          let adminValue = await adminModel.updateOne(
+            {
+              shop_id : id
+            },
+            {
+            fullname : admin_fullname,
+            phone :admin_phone,
+            chat_id :admin_chatid,
+            shop_id : id,
+            login : admin_login,
+            password: admin_password,
+            
+            
+          });
+          if(!adminValue){
+            return next(new InternalServerError(500,"Admin isnot updated"));
+          }
+           
+
+        }
+
+      if (value) {
+        let shop = await shopModel.findById(id);
+        let admin = await adminModel.findOne({shop_id : shop._id});
+        return res.status(200).json({
+          message: "shop is updated",
+          data: shop,
+          admin : admin
+        });
+      } else {
+        return next(new BadRequestError(400, "Not found"));
+      }
+    } catch (error) {
+      console.log(error);
+      return next(new InternalServerError(500, error.message));
+    }
+  }
+
+
+  async delete(req, res, next) {
+    try {
+      let { id } = req.params;
+      let value =await shopModel.deleteOne({_id:id})
+     if (value.deletedCount > 0) {
+        return res.status(200).json({
+            message: "shop is deleted",
+            data :{
+              _id :id
+            }
+          });
+     }else{
+        return next(new NotFoundError(404, "Not found"));
+     }
     } catch (error) {
       console.log(error);
       return next(new InternalServerError(500, error.message));
