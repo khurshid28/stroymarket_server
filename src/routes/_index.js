@@ -21,6 +21,7 @@ const adsRouter = require("./12.ads");
 const paymentRouter = require("./8.payment");
 const regionRouter = require("./15.region");
 const orderRouter = require("./14.order");
+const productItemRouter = require("./17.productItem");
 
 
 
@@ -35,6 +36,7 @@ router.use("/worker",checkToken,workerRouter);
 router.use("/category",categoryRouter);
 router.use("/product",checkToken,productRouter);
 router.use("/shop-product",shopProductRouter);
+router.use("/product-item",checkToken,productItemRouter);
 
 
 router.use("/news",checkToken,newsRouter);
