@@ -2,6 +2,8 @@ const shopModel = require("../models/5.shop");
 
 let adminModel = require("../models/2.admin");
 let shopProductModel = require("../models/16.shopProduct");
+let shopProductItemModel = require("../models/18.shopProductItem");
+
 let productModel = require("../models/7.product");
 let { InternalServerError, BadRequestError } = require("../utils/errors");
 const cryptoRandomString = require("secure-random-string");
@@ -168,7 +170,7 @@ class ShopController {
       let { product_id, regions } = req.query;
 
       console.log({ product_id, regions });
-      let shopProducts = await shopProductModel.find({ product_id });
+      let shopProducts = await shopProductItemModel.find({ product_id });
 
       let arrData = shopProducts.map(function getData(item) {
         return item.shop_id;
