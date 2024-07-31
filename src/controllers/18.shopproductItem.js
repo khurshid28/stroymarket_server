@@ -12,13 +12,14 @@ class ShopProductItemController {
     async create(req, res, next) {
         try {
           
-          let { price,product_id,item_id } = req.body;
+          let { price,product_id,item_id,count } = req.body;
 
           
           let admin = await adminModel.findById(req.user._id);
          
           let ShopProductItem = await ShopProductItemModel.create({
-            price,product_id,item_id,shop_id:admin.shop_id
+            price,product_id,item_id,shop_id:admin.shop_id,
+            count
            
           });
           if (ShopProductItem) {
@@ -37,9 +38,9 @@ class ShopProductItemController {
   async update(req, res, next) {
     try {
       let { id } = req.params;
-      let {   price,product_id,item_id } = req.body;
+      let {   price,product_id,item_id,count } = req.body;
       let value = await ShopProductItemModel.updateOne({ _id: id },{
-        price,product_id,item_id
+        price,product_id,item_id,count
       });
       if (value) {
         let ShopProductItem = await ShopProductItemModel.findById(id);

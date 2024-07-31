@@ -4,7 +4,9 @@ const ShopproductItemschema = mongoose.Schema(
     shop_id :String,
     product_id : String,
     item_id : String,
-    price :String,
+    price :Number,
+    count :Number,
+
    
   },
   { strict: false, timestamps: true }
